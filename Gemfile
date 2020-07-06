@@ -3,6 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# A modern CSS framework based on Flexbox
+gem 'bulma-rails', '~> 0.9.0'
+
+# Forms made easy!
+# gem 'simple_form', '~> 5.0', '>= 5.0.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.1'
 # Use sqlite3 as the database for Active Record
@@ -40,6 +46,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
+  gem 'better_errors', '~> 2.7', '>= 2.7.1'
+  gem 'binding_of_caller'
+
+  # Pry is a runtime developer console and IRB alternative with powerful introspection capabilities. 
+  gem 'pry', '~> 0.13.1'
+
+  # Guard is a command line tool to easily handle events on file system modifications.
+  gem 'guard', '~> 2.16', '>= 2.16.2'
+
+  # Guard::LiveReload automatically reloads your browser when 'view' files are modified.
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do
