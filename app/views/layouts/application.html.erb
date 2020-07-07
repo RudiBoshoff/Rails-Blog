@@ -8,8 +8,87 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <section class="hero is-medium is-warning is-bold">
+      <div class="hero-body">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <%= link_to root_path do %>
+              <%= image_tag 'logo.png', size: "200x200" , class: "logo" %>
+            <% end %>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+
+          <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+            </div>
+
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <div class="buttons">
+                  <a class="button is-dark">
+                    <strong>Sign up</strong>
+                  </a>
+                  <a class="button is-light">
+                    Log in
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="columns">
+
+        <div class="column is-narrow">
+        <div class="menu">
+          <div class="menu-list">
+            <%= link_to "Create New Post", new_post_path, class:"button is-warning mb-2" %>
+            <%= link_to "Posts", posts_path, class:"button is-warning" %>
+          </div>
+        </div>
+        </div>
+
+        <!-- Put yield in a column -->
+        <%= yield %>
+
+      </div>
+    </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+  </script>
   </body>
 </html>

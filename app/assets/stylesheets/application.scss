@@ -13,5 +13,35 @@
  *= require_tree .
  *= require_self
  */
-
+ 
  @import "bulma";
+
+
+.logo {
+   width: 10vw;
+   height: auto;
+   min-width: 75px;
+   max-width: 150px;
+}
+
+// CUSTOM SCROLL BAR
+/* width */
+::-webkit-scrollbar {
+   width: 10px;
+ }
+ 
+/* Track */
+::-webkit-scrollbar-track {
+   background: #555; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+   background: #ffdd57; 
+   border-radius: 5px;
+}
+ 
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+   background: #ffaf24; 
+}

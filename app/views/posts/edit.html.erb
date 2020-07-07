@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title">Create Post</h1>
+  <h1 class="title">Edit Post</h1>
   <%= form_with model: @post do |f|%>
   <div class="field">
     <%= f.label :title, class: "label" %>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="control">
-    <%= f.submit "Create Post", class: "button is-warning" %>
+    <%= f.submit "Edit Post", class: "button is-warning" %>
   </div>
   <% end %>
 </div>

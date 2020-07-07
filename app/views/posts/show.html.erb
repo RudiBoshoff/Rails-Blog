@@ -1,0 +1,26 @@
+ <div class="column">
+  <div class="columns mb-5">
+    <div class="column">
+      <div class="level-item">
+        <h1 class="title"><%= @post.title%></h1>
+      </div>
+    </div>
+    <div class="column is-narrow">
+      <div class="level-item">
+        <p>Date: <%= (@post.updated_at).strftime("%d %b %Y") %></p>
+      </div>
+    </div>
+  </div>
+  <p><%= simple_format(@post.content, class: "mb-5") %></p>
+</div>
+<div class="column is-narrow">
+  <div class="menu mt-1">
+    <div class="menu-label">
+      Actions
+    </div>
+    <div class="menu-items">
+      <%= link_to 'Edit', edit_post_path(@post), class: "button is-dark is-outlined" %>
+      <%= link_to 'Delete', post_path(@post), method: :delete, class:"button is-danger is-outlined" %>
+    </div>
+  </div>
+</div>
