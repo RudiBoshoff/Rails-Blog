@@ -6,7 +6,7 @@
       <div class="media">
         <div class="media-content">
           <p class="title is-4"><%= link_to post.title, post, class: "has-text-black" %></p>
-          <p><%= truncate(post.content, length: 100, separator: ' ') {link_to " Read More", post, class: "has-text-black has-text-weight-semibold"} %></p>
+          <p><%= truncate(post.content, length: 50, separator: ' ') {link_to " Read More", post, class: "has-text-black has-text-weight-semibold"} %></p>
         </div>
       </div>
     </div>

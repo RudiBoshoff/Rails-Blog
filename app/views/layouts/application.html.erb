@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <section class="hero is-medium is-warning is-bold">
+    <section class="hero is-small is-warning is-bold">
       <div class="hero-body">
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
@@ -47,18 +47,18 @@
 
     <section class="section">
       <div class="columns">
-
         <div class="column is-narrow">
-        <div class="menu">
-          <div class="menu-list">
-            <%= link_to "Create New Post", new_post_path, class:"button is-warning mb-2" %>
-            <%= link_to "Posts", posts_path, class:"button is-warning" %>
+          <div class="menu">
+            <div class="menu-list">
+              <%= link_to "Create New Post", new_post_path, class:"button is-warning mb-2" %>
+              <%= link_to "Posts", posts_path, class:"button is-warning" %>
+            </div>
           </div>
         </div>
+        <div class="column">
+          <%= yield %>
         </div>
-
         <!-- Put yield in a column -->
-        <%= yield %>
 
       </div>
     </section>
