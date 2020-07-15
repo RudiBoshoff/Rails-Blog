@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="title"><%= yield :page_title %></h1>
+  <%= form_with model: @post do |f|%>
+  <div class="field">
+    <%= f.label :title, class: "label" %>
+    <div class="control">
+      <%= f.text_field :title, class:"input" %>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :content, class: "label" %>
+    <div class="control">
+      <%= f.text_area :content, class: "textarea", rows:10 %>
+    </div>
+  </div>
+  <div class="control">
+    <%= f.submit class: "button is-warning" %>
+  </div>
+  <% end %>
+</div>

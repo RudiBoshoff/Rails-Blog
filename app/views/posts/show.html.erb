@@ -1,6 +1,6 @@
 <div class="container">
   <div class="columns is-desktop">
-    <div class="column  mr-3">
+    <div class="column mr-3">
       <div class="level ">
         <div class="level-left">
           <h1 class="title"><%= @post.title%></h1>
@@ -18,7 +18,9 @@
         </div>
         <div class="menu-list">
           <%= link_to 'Edit', edit_post_path(@post), class: "button is-dark is-outlined" %>
-          <%= link_to 'Delete', post_path(@post), method: :delete, class:"button is-danger is-outlined" %>
+          <%= link_to 'Delete', post_path(@post), method: :delete,
+                                                  data: { confirm: "Are you sure you would like to delete this post?" },
+                                                  class: "button is-danger is-outlined" %>
         </div>
       </div>
     </div>
