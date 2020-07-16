@@ -1,17 +1,30 @@
 <div class="container">
   <div class="columns is-desktop">
     <div class="column mr-3">
-      <div class="level ">
-        <div class="level-left">
-          <h1 class="title"><%= @post.title%></h1>
+    
+      <div class="post">
+        <div class="level ">
+          <div class="level-left">
+            <h1 class="title"><%= @post.title%></h1>
+          </div>
+          <div class="level-right">
+            <p>Date: <%= (@post.updated_at).strftime("%d %b %Y") %></p>
+          </div>
         </div>
-        <div class="level-right">
-          <p>Date: <%= (@post.updated_at).strftime("%d %b %Y") %></p>
-        </div>
+        <%= simple_format(@post.content, class: "mb-5") %>
       </div>
-      <%= simple_format(@post.content, class: "mb-5") %>
+
+      <div class="comment-form mt-5">
+        <%= render 'comments/form', post: @post %>
+      </div>
+
+      <div class="comments">
+        <h1 class="subtitle is-5"><%= pluralize( @post.comments.count,"comment") %></h1>
+        <%= render @post.comments %>
+      </div>
     </div>
-    <div class="column is-one-fifth">
+
+    <div class="column is-one-fifth post-actions">
       <div class="menu mt-2">
         <div class="menu-label">
           Actions
