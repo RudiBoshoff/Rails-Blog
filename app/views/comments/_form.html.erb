@@ -1,20 +1,25 @@
-<%= form_with model: [post, Comment.new(post_id: post.id)], local: true do |f| %>
+<%= form_with model: [post, comment], local: true do |f| %>
+  <div class="field">
+    <%= render 'shared/error_messages', object: comment %>
+  </div>
+
   <div class="field">
     <%= f.label :name, class: "label" %>
     <div class="control">
       <%= f.text_field :name, class:"input" %>
     </div>
   </div>
+
   <div class="field">
     <%= f.label :content,"Leave a comment", class: "label" %>
     <div class="control">
       <%= f.text_area :content, class: "textarea", rows:5, placeholder: "Your comment..." %>
     </div>
   </div>
+  
   <div class="control buttons">
-    <%= f.submit "Comment", class: "button is-warning" %>
+    <%= f.submit "Comment", class: "button is-dark" %>
     <%= f.submit "Cancel", type: :reset, class: "button" %>
   </div>
-  <div class="control">
-  </div>
+
 <% end %>

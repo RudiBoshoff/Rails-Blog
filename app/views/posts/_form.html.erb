@@ -1,20 +1,27 @@
 <div class="container">
   <h1 class="title"><%= yield :page_title %></h1>
-  <%= form_with model: @post do |f|%>
-  <div class="field">
-    <%= f.label :title, class: "label" %>
-    <div class="control">
-      <%= f.text_field :title, class:"input" %>
+  <%= form_with model: post, local: true do |f|%>
+    <div class="field">
+      <%= render 'shared/error_messages', object: post %>
     </div>
-  </div>
-  <div class="field">
-    <%= f.label :content, class: "label" %>
-    <div class="control">
-      <%= f.text_area :content, class: "textarea", rows:10 %>
+
+    <div class="field">
+      <%= f.label :title, class: "label" %>
+      <div class="control">
+        <%= f.text_field :title, class:"input" %>
+      </div>
     </div>
-  </div>
-  <div class="control">
-    <%= f.submit class: "button is-warning" %>
-  </div>
+
+    <div class="field">
+      <%= f.label :content, class: "label" %>
+      <div class="control">
+        <%= f.text_area :content, class: "textarea", rows:10 %>
+      </div>
+    </div>
+
+    <div class="control buttons">
+      <%= f.submit class: "button is-dark" %>
+      <%= link_to 'Cancel', root_path, class: "button" %>
+    </div>
   <% end %>
 </div>

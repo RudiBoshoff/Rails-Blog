@@ -1,12 +1,12 @@
 <div class="container">
   <h1 class="title">Posts</h1>
   <% @posts.each do |post| %>
-  <div class="card has-background-warning mb-5">
+  <div class="card has-background-dark  has-text-white mb-5">
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4"><%= link_to post.title, post, class: "has-text-black" %></p>
-          <p><%= truncate(post.content, length: 50, separator: ' ') {link_to " Read More", post, class: "has-text-black has-text-weight-semibold"} %></p>
+          <p class="title is-4"><%= link_to post.title, post, class: "has-text-white" %></p>
+          <p><%= truncate(post.content, length: 50, separator: ' ') {link_to " Read More", post, class: "has-text-white has-text-weight-semibold"} %></p>
         </div>
       </div>
     </div>

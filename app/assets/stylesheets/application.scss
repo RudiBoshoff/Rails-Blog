@@ -45,3 +45,19 @@
 ::-webkit-scrollbar-thumb:hover {
    background: #ffaf24; 
 }
+
+// Error handling
+.field_with_errors input,
+.field_with_errors textarea {
+   border: 1px solid red;
+}
+
+.field_with_errors label::before {
+   content: "";
+   width: 8px;
+   height: 8px;
+   display: inline-block;
+   border-radius: 50%;
+   background: red;
+   margin-right: 5px;
+}

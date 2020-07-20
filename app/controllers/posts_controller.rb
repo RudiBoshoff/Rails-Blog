@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: [:edit, :update, :show, :destroy]
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -14,43 +16,44 @@ class PostsController < ApplicationController
       flash[:success] = 'Post was successfully created'
       redirect_to @post
     else
-      flash[:error] = 'Post creation failed'
+      flash.now[:warning] = 'Post creation failed'
       render 'new'
     end
   end
-  
+
   def edit
-    @post = Post.find(params[:id])
   end
-  
+
   def update
-    @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = 'Post was successfully updated'
       redirect_to @post
     else
-      flash[:error] = 'Post edit failed'
+      flash.now[:warning] = 'Post edit failed'
       render 'edit'
     end
   end
 
   def show
-    @post = Post.find(params[:id])
+    @comment = Comment.new(post_id: @post.id)
   end
 
   def destroy
-    @post = Post.find(params[:id])
     if @post.destroy
       flash[:success] = 'Post was successfully deleted.'
       redirect_to root_path
     else
-      flash[:error] = 'Post delete failed'
+      flash[:warning] = 'Post delete failed'
       redirect_to @post
     end
   end
   
 
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :content)

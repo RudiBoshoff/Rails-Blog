@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+  <div class="notification is-danger is-light">
+    <label class="label"><%= pluralize(object.errors.count, "error") %> prevented this post from being saved:</label>
+    <ul>
+    <% object.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -9,12 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <section class="hero is-small is-warning is-bold">
+    <section class="hero is-small is-dark is-bold">
       <div class="hero-body">
         <nav class="navbar" role="navigation" aria-label="main navigation">
           <div class="navbar-brand">
             <%= link_to root_path do %>
-              <%= image_tag 'logo.png', size: "200x200" , class: "logo" %>
+              <%= image_tag 'logo-white.png', size: "200x200" , class: "logo" %>
             <% end %>
 
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
@@ -45,13 +45,22 @@
       </div>
     </section>
 
+    <!-- # flash messages --> 
+    <section>
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+              <%= value %>
+        </div>
+      <% end %>
+    </section>
+
     <section class="section">
       <div class="columns">
         <div class="column is-narrow">
           <div class="menu">
             <div class="menu-list">
-              <%= link_to "Create New Post", new_post_path, class:"button is-warning mb-2" %>
-              <%= link_to "Posts", posts_path, class:"button is-warning" %>
+              <%= link_to "Create New Post", new_post_path, class:"button is-dark mb-2" %>
+              <%= link_to "Posts", posts_path, class:"button is-dark" %>
             </div>
           </div>
         </div>
