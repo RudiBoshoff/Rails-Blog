@@ -1,24 +1,21 @@
-# README
+# Rails-Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Simple rails blog with posts and comments with CRUD functionality and styled completely with BULMA CSS Framework. See app/assets/images/ for a screenshot of the site.
 
-Things you may want to cover:
+Functionality:
+(Pull and run `rails s` to test functionality)
+  1. CRUD Posts
+  2. CRD Comments
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+GEMS:
+ 1. Bulma-rails
+ 2. better-errors
+ 3. pry
+ 4. guard
+ 5. guard-livereload
+  
+TODO:
+ 1. Incorporate Devise for authentication and user roles.
+ 2. login, logout, signup with email confirmations.
+ 2. Testing.
+ 3. host on heroku.
